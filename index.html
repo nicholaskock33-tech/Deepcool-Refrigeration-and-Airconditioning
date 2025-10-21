@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepcool Refrigeration and Airconditioning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .review-card {
+            border-left: 4px solid #0ea5e9;
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+        .hero-bg {
+            background-image: url('https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/backgroundImage.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-snowflake text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-800">Deepcool</h1>
+                        <p class="text-sm text-gray-600">Refrigeration & Airconditioning</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary-600 font-medium">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary-600 font-medium">About Us</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary-600 font-medium">Services</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-primary-600 font-medium">Gallery</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-primary-600 font-medium">Reviews</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary-600 font-medium">Contact</a>
+                    <button class="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium">
+                        Request Quote
+                    </button>
+                </div>
+                
+                <button class="md:hidden text-gray-700" id="menu-toggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white border-t" id="mobile-menu">
+            <div class="container mx-auto px-4 py-4 space-y-4">
+                <a href="#home" class="block text-gray-700 hover:text-primary-600 font-medium">Home</a>
+                <a href="#about" class="block text-gray-700 hover:text-primary-600 font-medium">About Us</a>
+                <a href="#services" class="block text-gray-700 hover:text-primary-600 font-medium">Services</a>
+                <a href="#gallery" class="block text-gray-700 hover:text-primary-600 font-medium">Gallery</a>
+                <a href="#reviews" class="block text-gray-700 hover:text-primary-600 font-medium">Reviews</a>
+                <a href="#contact" class="block text-gray-700 hover:text-primary-600 font-medium">Contact</a>
+                <button class="w-full bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium mt-2">
+                    Request Quote
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Background Image -->
+    <section id="home" class="hero-bg py-32 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 text-white">
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6">
+                        Your trusted experts in cooling and climate control
+                    </h1>
+                    <p class="text-xl mb-8 opacity-90">
+                        Professional refrigeration and air conditioning services for residential and commercial clients in Gqeberha.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-primary-600 text-white px-8 py-4 rounded-lg hover:bg-primary-700 transition-colors font-medium text-lg shadow-lg">
+                            Request a Quote
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-600 transition-colors font-medium text-lg">
+                            <i class="fas fa-phone mr-2"></i> Call Now
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/d71750a5-9962-4407-95b9-44b1e190eac6.jpg" alt="Deepcool Technician" class="rounded-xl shadow-2xl w-full max-w-md object-cover border-4 border-white">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">About Deepcool</h2>
+                <div class="w-24 h-1 bg-primary-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.27.jpeg" alt="Deepcool Team" class="rounded-xl shadow-lg w-full object-cover">
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Your Trusted Cooling Experts</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Deepcool Refrigeration and Airconditioning is a professional temperature control company based in Zwide 3, Gqeberha. We specialize in the repair, installation, and maintenance of refrigeration and air conditioning systems for both residential and commercial clients.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Our mission is to deliver high-quality, reliable, and affordable cooling solutions. With a dedicated team of skilled technicians, we ensure your appliances perform efficiently and last longer. Customer satisfaction is at the heart of everything we do.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-600 mr-3"></i>
+                            <span class="text-gray-700">Experienced Technicians</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-600 mr-3"></i>
+                            <span class="text-gray-700">Quality Workmanship</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-600 mr-3"></i>
+                            <span class="text-gray-700">Affordable Pricing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-600 mr-3"></i>
+                            <span class="text-gray-700">Fast Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Comprehensive cooling solutions for every need
+                </p>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:border-primary-200 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-wind text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Air Conditioning Installation & Servicing</h3>
+                    <p class="text-gray-600 mb-4">
+                        Professional installation and maintenance of residential and commercial air conditioning systems.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> New installations</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Regular servicing</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> System upgrades</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:border-primary-200 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-temperature-low text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Refrigeration System Repairs</h3>
+                    <p class="text-gray-600 mb-4">
+                        Expert repair services for all types of refrigeration equipment and appliances.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Domestic fridges</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Commercial units</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Emergency repairs</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:border-primary-200 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-warehouse text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Cold Room & Freezer Maintenance</h3>
+                    <p class="text-gray-600 mb-4">
+                        Specialized maintenance and repair services for cold rooms and industrial freezers.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Temperature calibration</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Door seal replacement</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> System optimization</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:border-primary-200 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Domestic Cooling Solutions</h3>
+                    <p class="text-gray-600 mb-4">
+                        Complete cooling solutions for homes, from single units to whole-house systems.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Split systems</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Window units</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Ducted systems</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:border-primary-200 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Commercial Cooling Solutions</h3>
+                    <p class="text-gray-600 mb-4">
+                        Tailored cooling solutions for businesses, offices, and commercial establishments.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Office buildings</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Retail spaces</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Industrial facilities</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:border-primary-200 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Emergency Repair Services</h3>
+                    <p class="text-gray-600 mb-4">
+                        Available for urgent repairs by arrangement, ensuring minimal downtime.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 24/7 availability</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Fast response</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Priority service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Our Work</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    See our professional installations and completed projects
+                </p>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mt-4"></div>
+            </div>
+            
+            <!-- Photo Gallery - All 15 verified working images -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/d71750a5-9962-4407-95b9-44b1e190eac6.jpg" alt="Project 1" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.31.jpeg" alt="Project 2" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.31%20%20(1).jpeg" alt="Project 3" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.30.jpeg" alt="Project 4" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.30%20%20(1).jpeg" alt="Project 5" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.29.jpeg" alt="Project 6" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.29%20%20(5).jpeg" alt="Project 7" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.29%20%20(4).jpeg" alt="Project 8" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.29%20%20(3).jpeg" alt="Project 9" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.29%20%20(1).jpeg" alt="Project 10" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.28.jpeg" alt="Project 11" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.28%20%20(1).jpeg" alt="Project 12" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/WhatsApp%20Image%202025-10-21%20at%2008.26.27.jpeg" alt="Project 13" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/9a707035-0e46-4573-a05f-3406b0d1fc59.jpg" alt="Project 14" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/nicholaskock33-tech/Deepcool-Refrigeration-and-Airconditioning/main/1bc4fdaa-92e2-4192-bafc-699f6c6b604f.jpg" alt="Project 15" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Customer Reviews</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    What our satisfied customers say about us
+                </p>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="review-card bg-white p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Deepcool installed our new air conditioning system and the service was exceptional. Professional, punctual, and reasonably priced. Highly recommended!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-600 font-semibold">JD</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">John D.</h4>
+                            <p class="text-gray-600 text-sm">Residential Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card bg-white p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Emergency repair service saved our business! Their technician arrived within an hour and fixed our commercial freezer. Outstanding service!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-600 font-semibold">SM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah M.</h4>
+                            <p class="text-gray-600 text-sm">Restaurant Owner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="review-card bg-white p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="ml-2 text-gray-600">4.8</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Professional team that knows their stuff. They maintained our cold room and it's running better than ever. Will definitely use them again."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-600 font-semibold">MT</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Michael T.</h4>
+                            <p class="text-gray-600 text-sm">Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Get in touch for a free quote or emergency service
+                </p>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Info -->
+                <div class="lg:w-1/3">
+                    <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Get In Touch</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Address</h4>
+                                    <p class="text-gray-600">James Way, Zwide 3<br>Gqeberha, 6201</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Phone</h4>
+                                    <p class="text-gray-600">078 670 3781</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Email</h4>
+                                    <a href="mailto:tchitotormbe95@gmail.com" class="text-primary-600 hover:text-primary-700 font-medium">tchitotormbe95@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Hours</h4>
+                                    <p class="text-gray-600">Open daily: 8:00 AM - 5:30 PM<br>Closed Sundays</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                        <h4 class="font-semibold text-gray-800 mb-4">Quick Contact Options</h4>
+                        
+                        <a href="mailto:tchitotormbe95@gmail.com" class="block w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium text-center">
+                            <i class="fas fa-envelope mr-2"></i> Send Email
+                        </a>
+                        
+                        <a href="https://wa.me/27786703781" target="_blank" class="block w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors font-medium text-center">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp Us
+                        </a>
+                        
+                        <a href="tel:0786703781" class="block w-full bg-primary-600 text-white py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium text-center">
+                            <i class="fas fa-phone mr-2"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Google Map Placeholder -->
+                <div class="lg:w-2/3">
+                    <div class="bg-white p-8 rounded-xl shadow-lg h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Location</h3>
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-map-marked-alt text-4xl text-gray-500 mb-4"></i>
+                                <p class="text-gray-600">Google Maps Integration</p>
+                                <p class="text-gray-500 text-sm mt-2">James Way, Zwide 3, Gqeberha</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/27786703781" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-snowflake text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Deepcool</h3>
+                            <p class="text-gray-400 text-sm">Refrigeration & Airconditioning</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 max-w-md">
+                        "At Deepcool Refrigeration and Airconditioning, we're committed to keeping you cool and comfortable year-round. Try us once, and you'll call us always."
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i> 078 670 3781</p>
+                        <p><i class="fas fa-envelope mr-2"></i> tchitotormbe95@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Zwide 3, Gqeberha</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Deepcool Refrigeration and Airconditioning. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
